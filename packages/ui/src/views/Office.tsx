@@ -152,6 +152,8 @@ function Office3D({ state, onFail, on2D }: { state: OfficeState; onFail: () => v
         )}
       </AnimatePresence>
 
+      {/* Journal and break room share the left column: the journal gives way first, they never overlap. */}
+      <div className="o3d-left">
       <section className="win o3d-journal" aria-labelledby="j-h">
         <h2 id="j-h" className="eyebrow">
           Journal
@@ -197,6 +199,7 @@ function Office3D({ state, onFail, on2D }: { state: OfficeState; onFail: () => v
           </ol>
         )}
       </section>
+      </div>
 
       <div className="win o3d-cmds" role="group" aria-label="Caméra">
         <button className="cmd" onClick={() => { pickAgent(null); dio.current?.home(); }}>
