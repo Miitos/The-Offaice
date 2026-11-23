@@ -1,0 +1,24 @@
+{
+  "name": "the-offaice",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Bureau virtuel et kanban pour une équipe d'agents Claude Code",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w @agent-office/server",
+    "dev:ui": "npm run dev -w @agent-office/ui",
+    "start:server": "npm run start -w @agent-office/server",
+    "build": "npm run build -w @agent-office/mcp && npm run build -w @agent-office/ui",
+    "setup:team": "npm run build && node scripts/setup-team.mjs",
+    "test": "npm test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "overrides": {
+    "vite": "^6.4.1"
+  },
+  "engines": {
+    "node": ">=20.12"
+  }
+}

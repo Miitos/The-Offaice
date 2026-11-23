@@ -1,0 +1,119 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 4317,
+    "dbPath": "./data/office.db"
+  },
+  "team": {
+    "repoPath": "../office-team",
+    "leadAgent": "lead"
+  },
+  "quota": {
+    "source": "rate_limits",
+    "hardCapPct": 90,
+    "stopAtPct": 88,
+    "autoLockBreakRoomPct": 75,
+    "fallbackTokenBudget": {
+      "windowHours": 5,
+      "tokens": 0
+    }
+  },
+  "usage": {
+    "pollSeconds": 5,
+    "modelWeights": {
+      "opus": 5,
+      "sonnet": 3,
+      "haiku": 1,
+      "default": 3
+    },
+    "tokenWeights": {
+      "input": 1,
+      "output": 5,
+      "cacheCreation": 1.25,
+      "cacheRead": 0.1
+    }
+  },
+  "breakRoom": {
+    "cooldownSeconds": 300,
+    "maxChars": 280
+  },
+  "retro": {
+    "autoApply": true,
+    "nudgeLimit": 4
+  },
+  "agents": [
+    {
+      "name": "lead",
+      "role": "Lead · PO",
+      "capabilities": [
+        "lead"
+      ],
+      "model": "sonnet",
+      "share": 25
+    },
+    {
+      "name": "designer",
+      "role": "Designer",
+      "capabilities": [
+        "designer"
+      ],
+      "model": "opus",
+      "share": 10
+    },
+    {
+      "name": "archi",
+      "role": "Architecte",
+      "capabilities": [
+        "architect"
+      ],
+      "model": "opus",
+      "share": 10
+    },
+    {
+      "name": "dev1",
+      "role": "Dev",
+      "capabilities": [
+        "dev"
+      ],
+      "model": "sonnet",
+      "share": 17.5,
+      "worktree": "../office-team-wt-dev1"
+    },
+    {
+      "name": "dev2",
+      "role": "Dev",
+      "capabilities": [
+        "dev"
+      ],
+      "model": "sonnet",
+      "share": 17.5,
+      "worktree": "../office-team-wt-dev2"
+    },
+    {
+      "name": "reviewer",
+      "role": "Reviewer",
+      "capabilities": [
+        "reviewer"
+      ],
+      "model": "sonnet",
+      "share": 10
+    },
+    {
+      "name": "tester",
+      "role": "Testeur",
+      "capabilities": [
+        "tester"
+      ],
+      "model": "sonnet",
+      "share": 10
+    }
+  ],
+  "projects": [
+    {
+      "id": "office-team",
+      "name": "office-team",
+      "repoPath": "../office-team",
+      "mainBranch": "main"
+    }
+  ]
+}

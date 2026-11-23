@@ -1,0 +1,18 @@
+{
+  "name": "@agent-office/mcp",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Serveur MCP « office » (stdio) : les outils des agents, relayés au serveur The OffAIce",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.11"
+  }
+}

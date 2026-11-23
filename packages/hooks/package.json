@@ -1,0 +1,7 @@
+{
+  "name": "@agent-office/hooks",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Scripts appelés par Claude Code : hook (office-hook.mjs) et statusline (statusline.mjs). Aucune dépendance."
+}
